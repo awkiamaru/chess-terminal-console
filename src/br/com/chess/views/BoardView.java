@@ -7,7 +7,6 @@ import br.com.chess.chess.ChessPosition;
 import br.com.chess.chess.utils.Color;
 import br.com.chess.views.utils.BoardColors;
 
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -33,10 +32,16 @@ public class BoardView {
         System.out.println();
         capturedPieces(capturedPieces);
         System.out.println("Turno: "+ chessMatch.getTurn());
-        System.out.println("Esperando o joagador: "+ chessMatch.getCurrentPlayer());
-        if (chessMatch.isCheck()){
-            System.out.println("Check!");
+        if (!chessMatch.isCheckMate()){
+            System.out.println("Esperando o joagador: "+ chessMatch.getCurrentPlayer());
+            if (chessMatch.isCheck()){
+                System.out.println("Check!");
+            }
+        }else {
+            System.out.println("CHECKMATE!");
+            System.out.println("Vencedor: "+ chessMatch.getCurrentPlayer());
         }
+
     }
 
     public static void printBoard(ChessPiece[][] pieces) {

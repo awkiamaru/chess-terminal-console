@@ -20,7 +20,7 @@ public class Main {
         List<ChessPiece> captureChessPieces = new ArrayList<>();
 
 
-        while (true){
+        while (!chessMatch.isCheckMate()){
             try{
                 BoardView.clearScreen();
                 BoardView.printMatch(chessMatch, captureChessPieces);
@@ -43,7 +43,9 @@ public class Main {
                 System.out.println(e.getMessage());
                 sc.nextLine();
             }
-
         }
+        BoardView.clearScreen();
+        BoardView.printMatch(chessMatch, captureChessPieces);
+
     }
 }
