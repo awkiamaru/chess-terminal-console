@@ -34,6 +34,9 @@ public class BoardView {
         capturedPieces(capturedPieces);
         System.out.println("Turno: "+ chessMatch.getTurn());
         System.out.println("Esperando o joagador: "+ chessMatch.getCurrentPlayer());
+        if (chessMatch.isCheck()){
+            System.out.println("Check!");
+        }
     }
 
     public static void printBoard(ChessPiece[][] pieces) {
