@@ -1,6 +1,8 @@
 package br.com.chess.views;
 
 import br.com.chess.chess.ChessPiece;
+import br.com.chess.chess.utils.Color;
+import br.com.chess.views.utils.BoardColors;
 
 public class BoardView {
 
@@ -17,7 +19,11 @@ public class BoardView {
 
     private static void printPiece(ChessPiece piece){
         if( piece != null){
-            System.out.print(piece);
+            if (piece.getColor() == Color.WHITE){
+                System.out.print(BoardColors.ANSI_WHITE + piece + BoardColors.ANSI_RESET);
+            }else {
+                System.out.print(BoardColors.ANSI_YELLOW + piece + BoardColors.ANSI_RESET);
+            }
         }else {
             System.out.print("-");
         }
