@@ -15,37 +15,53 @@ public class BoardView {
         System.out.flush();
     }
 
-    public static ChessPosition readChessPosition(Scanner scanner){
+    public static ChessPosition readChessPosition(Scanner sc){
         try {
-            String s = scanner.nextLine();
+            String s = sc.nextLine();
             char column = s.charAt(0);
-            Integer row = Integer.parseInt(s.substring(1));
-            return new ChessPosition(column,row);
+            int row = Integer.parseInt(s.substring(1));
+            return new ChessPosition(column, row);
         }catch (RuntimeException e){
             throw new InputMismatchException("Erro ao ler a posição no tabuleiro. Valores validos entre a1 até h8");
         }
     }
 
-    public static void printBoard(ChessPiece[][] pieces){
-        for (int i = 0; i< pieces.length; i++){
+    public static void printBoard(ChessPiece[][] pieces) {
+        for (int i = 0; i < pieces.length; i++) {
             System.out.print((8 - i) + " ");
-            for (int j = 0; j< pieces.length; j++){
-                printPiece(pieces[i][j]);
+            for (int j = 0; j < pieces.length; j++) {
+                printPiece(pieces[i][j], false);
             }
             System.out.println();
         }
-        System.out.println("  A B C D E F G H");
+        System.out.println("  a b c d e f g h");
     }
 
-    private static void printPiece(ChessPiece piece){
-        if( piece != null){
-            if (piece.getColor() == Color.WHITE){
+    public static void printBoard(ChessPiece[][] pieces, boolean[][] possibleMoves) {
+        for (int i = 0; i < pieces.length; i++) {
+            System.out.print((8 - i) + " ");
+            for (int j = 0; j < pieces.length; j++) {
+                printPiece(pieces[i][j], possibleMoves[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println("  a b c d e f g h");
+    }
+
+    private static void printPiece(ChessPiece piece, boolean background) {
+        if (background) {
+            System.out.print(BoardColors.ANSI_BLUE_BACKGROUND);
+        }
+        if (piece == null) {
+            System.out.print("-" + BoardColors.ANSI_RESET);
+        }
+        else {
+            if (piece.getColor() == Color.WHITE) {
                 System.out.print(BoardColors.ANSI_WHITE + piece + BoardColors.ANSI_RESET);
-            }else {
+            }
+            else {
                 System.out.print(BoardColors.ANSI_YELLOW + piece + BoardColors.ANSI_RESET);
             }
-        }else {
-            System.out.print("-");
         }
         System.out.print(" ");
     }

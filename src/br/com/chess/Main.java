@@ -27,12 +27,16 @@ public class Main {
                 System.out.print("Posição de origem: ");
                 ChessPosition source = BoardView.readChessPosition(sc);
 
+                boolean[][] possibleMoves = chessMatch.possibleMoves(source);
+                BoardView.clearScreen();
+                BoardView.printBoard(chessMatch.getPieces(),possibleMoves);
                 System.out.println();
                 System.out.print("Posição de destino: ");
                 ChessPosition target  = BoardView.readChessPosition(sc);
-                ChessPiece capturedPiece = chessMatch.performChessMove(source,target);
-            }catch (ChessException | InputMismatchException i){
-                System.out.println(i.getMessage());
+                ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
+            }
+            catch (ChessException | InputMismatchException e) {
+                System.out.println(e.getMessage());
                 sc.nextLine();
             }
 
