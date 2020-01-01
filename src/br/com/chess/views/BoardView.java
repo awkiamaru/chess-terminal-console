@@ -1,12 +1,15 @@
 package br.com.chess.views;
 
+import br.com.chess.boardgame.Piece;
+import br.com.chess.chess.ChessMatch;
 import br.com.chess.chess.ChessPiece;
 import br.com.chess.chess.ChessPosition;
 import br.com.chess.chess.utils.Color;
 import br.com.chess.views.utils.BoardColors;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.lang.reflect.Array;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class BoardView {
 
@@ -24,6 +27,13 @@ public class BoardView {
         }catch (RuntimeException e){
             throw new InputMismatchException("Erro ao ler a posição no tabuleiro. Valores validos entre a1 até h8");
         }
+    }
+    public static void printMatch(ChessMatch chessMatch, List<ChessPiece> capturedPieces){
+            printBoard(chessMatch.getPieces());
+        System.out.println();
+        capturedPieces(capturedPieces);
+        System.out.println("Turno: "+ chessMatch.getTurn());
+        System.out.println("Esperando o joagador: "+ chessMatch.getCurrentPlayer());
     }
 
     public static void printBoard(ChessPiece[][] pieces) {
@@ -64,5 +74,22 @@ public class BoardView {
             }
         }
         System.out.print(" ");
+    }
+    private static void capturedPieces(List<ChessPiece> chessPieces){
+        List<ChessPiece> white = chessPieces.stream().filter(x->x
+                .getColor() == Color.WHITE).collect(Collectors.toList());
+
+        List<ChessPiece> black = chessPieces.stream().filter(x->x
+                .getColor() == Color.BLACK).collect(Collectors.toList());
+        System.out.println("Peças capturadas: ");
+        System.out.print("Peças brancas: ");
+        System.out.print(BoardColors.ANSI_WHITE);
+        System.out.println(Arrays.toString(white.toArray()));
+        System.out.print(BoardColors.ANSI_RESET);
+        System.out.print("Peças pretas: ");
+        System.out.print(BoardColors.ANSI_YELLOW);
+        System.out.println(Arrays.toString(black.toArray()));
+
+
     }
 }
