@@ -46,7 +46,7 @@ public class Board {
         piece.position = position;
     }
     public Piece removePiece (Position position){
-        if(!positionExists(position)){
+        if(positionExists(position)){
             throw new BoardException("A posição fora do tabuleiro");
         }
         if (piece(position) == null){
