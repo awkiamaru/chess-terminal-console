@@ -1,7 +1,5 @@
 package br.com.chess;
 
-import br.com.chess.boardgame.Board;
-import br.com.chess.boardgame.Position;
 import br.com.chess.chess.ChessMatch;
 import br.com.chess.chess.ChessPiece;
 import br.com.chess.chess.ChessPosition;
