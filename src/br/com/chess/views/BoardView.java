@@ -1,10 +1,25 @@
 package br.com.chess.views;
 
 import br.com.chess.chess.ChessPiece;
+import br.com.chess.chess.ChessPosition;
 import br.com.chess.chess.utils.Color;
 import br.com.chess.views.utils.BoardColors;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class BoardView {
+
+    public static ChessPosition readChessPosition(Scanner scanner){
+        try {
+            String s = scanner.nextLine();
+            char column = s.charAt(0);
+            Integer row = Integer.parseInt(s.substring(1));
+            return new ChessPosition(column,row);
+        }catch (RuntimeException e){
+            throw new InputMismatchException("Erro ao ler a posição no tabuleiro. Valores validos entre a1 até h8");
+        }
+    }
 
     public static void printBoard(ChessPiece[][] pieces){
         for (int i = 0; i< pieces.length; i++){
