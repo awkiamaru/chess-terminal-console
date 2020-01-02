@@ -6,33 +6,36 @@
 # Chess terminal console game
 </div>
 
-O projeto foi criado com o intuito de aprender melhor a linguagem Java e aprofundar melhor o conhecimento em orientação a objetos.
+The project was created with the intuition of learning better to linguagem Java and deepened the knowledge of guidance to objects.
 
-Aulas foram feitas pelo professor Nélio Alves, no curso [Java COMPLETO 2020 Programação Orientada a Objetos +Projetos](https://www.udemy.com/course/java-curso-completo/)
 
-Para executar o jogo você precisa ter:
+
+Classes were made by Professor Nélio Alves, on course [Java COMPLETO 2020 Programação Orientada a Objetos +Projetos](https://www.udemy.com/course/java-curso-completo/)
+
+To run the game you need to have:
    
-   *  Versões a partir do Java 8
+   *  Versions after Java 8
  
- Agora como você deverá executar? 
-> Digite o seguinte comando
+ Now how do you execute?
+> Enter the following command
     
     java -jar target/chess-terminal-console-game-1.0-SNAPSHOT-jar-with-dependencies.jar
 
-Com o comando acima você já poderá iniciar o game e será levado para a tela inicial de apresentação
+With command above you can already start the game and be taken to the initial screen of presentation
+
 ![welcome image](https://raw.githubusercontent.com/LuisFrag/chess-terminal-console/master/src/main/resources/media/Screenshot%20from%202020-01-02%2012-58-30.png)
 
->Você pode digitar Yes(yes) ou Y(y) para iniciar, qualquer outra tecla cancela a inicialização do game
+>You can type Yes(yes), or Y(y), to start, any other key cancels the initialization of the game
 
-Após ser entrar você é redirecionado para outra tela onde já o jogo já é mostrado.
+After being in you is redirected to another screen where the game is already shown.
 
 ![Initial game](https://raw.githubusercontent.com/LuisFrag/chess-terminal-console/master/src/main/resources/media/Screenshot%20from%202020-01-02%2012-53-46.png)
 
-Para movimentar as peças você tem sua posição de origem e sua posição de destino, e para se mover entre os dois você precisa saber a letra da coluna e o número da linha.
+To move the pieces you have your position of origin and your position of destiny, and to move between the two you need to know the letter of column and the number of the line.
 
 ![Option moviments](https://raw.githubusercontent.com/LuisFrag/chess-terminal-console/master/src/main/resources/media/Screenshot%20from%202020-01-02%2012-55-43.png)
 
-Como visto na foto acima, você pode ver todas as suas opções viáveis da sua peça no jogo.
+In the photo above, you can see all your viable options from your play in the game.
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
