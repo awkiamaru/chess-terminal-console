@@ -38,6 +38,11 @@ public class Main {
                 if(capturedPiece != null){
                     captureChessPieces.add(capturedPiece);
                 }
+                if(chessMatch.getPromoted() != null){
+                    System.out.println("Digite a letra da peça a ser escolhida: (A/C/T/B)");
+                    String type = sc.nextLine();
+                    chessMatch.replacepromotedPiece(type);
+                }
             }
             catch (ChessException | InputMismatchException e) {
                 System.out.println(e.getMessage());
