@@ -6,13 +6,13 @@
 # Chess terminal console game
 </div>
 
-O projeto foi criado com o intuito de aprender melhor a linguagem java e aprofundar melhor os conhecimento em orientação a objetos.
+O projeto foi criado com o intuito de aprender melhor a linguagem Java e aprofundar melhor o conhecimento em orientação a objetos.
 
 Aulas foram feitas pelo professor Nélio Alves, no curso [Java COMPLETO 2020 Programação Orientada a Objetos +Projetos](https://www.udemy.com/course/java-curso-completo/)
 
 Para executar o jogo você precisa ter:
    
-   *  Versões do Java 8 para cima
+   *  Versões a partir do Java 8
  
  Agora como você deverá executar? 
 > Digite o seguinte comando
@@ -33,9 +33,6 @@ Para movimentar as peças você tem sua posição de origem e sua posição de d
 ![Option moviments](https://raw.githubusercontent.com/LuisFrag/chess-terminal-console/master/src/main/resources/media/Screenshot%20from%202020-01-02%2012-55-43.png)
 
 Como visto na foto acima, você pode ver todas as suas opções viáveis da sua peça no jogo.
-
-
-
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
